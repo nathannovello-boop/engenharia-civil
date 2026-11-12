@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engenharia Civil — Projetar o futuro. Construir possibilidades.</title>
+  <meta name="description" content="Site da Feira de Profissões sobre Engenharia Civil: o que faz o engenheiro civil, história, áreas de atuação, formação e mercado de trabalho no Brasil, no Paraná e em Curitiba.">
+  <meta name="theme-color" content="#16181b">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Fontes (gratuitas, sem chave). Se não carregarem, o site usa as fontes de reserva definidas no CSS. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Marca o documento como "com JavaScript" antes da pintura (evita piscar nas animações de entrada). -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Biblioteca de ícones (linhas finas, estilo desenho técnico). Usada via <use href="#i-..."> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-frame" viewBox="0 0 48 48"><path d="M8 42V10h32v32M8 10l32 32M40 10L8 42M4 42h40"/></symbol>
+      <symbol id="i-soil" viewBox="0 0 48 48"><path d="M4 16h40M4 27h40M4 38h40M12 6h24M17 6v28M31 6v28M17 34l-3 6M17 34l3 6M31 34l-3 6M31 34l3 6"/></symbol>
+      <symbol id="i-road" viewBox="0 0 48 48"><path d="M19 6L6 42M29 6l13 36M24 8v6M24 20v8M24 34v8"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 48 48"><path d="M24 5C24 5 11 19 11 29a13 13 0 0 0 26 0C37 19 24 5 24 5zM18 31a6 6 0 0 0 6 6"/></symbol>
+      <symbol id="i-dam" viewBox="0 0 48 48"><path d="M20 8h8l13 34H7zM3 22q4-3 8 0t8 0M3 31q4-3 8 0t6 0"/></symbol>
+      <symbol id="i-crane" viewBox="0 0 48 48"><path d="M16 43V9M10 9h32M16 15L9 9M38 9v11M38 20h-5v7h10v-7zM11 43h16M16 9l22 0M16 15h22"/></symbol>
+      <symbol id="i-building" viewBox="0 0 48 48"><path d="M10 43V8h20v35M30 18h8v25M4 43h40M16 14h8M16 22h8M16 30h8M33 26h2M33 34h2"/></symbol>
+      <symbol id="i-bridge" viewBox="0 0 48 48"><path d="M3 28h42M9 28V10M39 28V10M9 12L21 28M9 12L3 28M39 12L27 28M39 12l6 16M3 42h42M12 28v14M36 28v14"/></symbol>
+      <symbol id="i-city" viewBox="0 0 48 48"><path d="M4 43h40M8 43V24h10v19M18 43V12h12v31M30 43V28h10v15M22 18h4M22 25h4M22 32h4"/></symbol>
+      <symbol id="i-tank" viewBox="0 0 48 48"><path d="M10 10h28v14a14 6 0 0 1-28 0zM10 10a14 5 0 0 1 28 0M16 31l-4 12M32 31l4 12M24 31v12M12 43h24"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24"><path d="M9 5H5v14h14v-4M14 4h6v6M20 4l-9 9"/></symbol>
+      <symbol id="i-photo" viewBox="0 0 48 48"><path d="M5 11h38v28H5zM5 33l11-11 9 9 6-6 12 12M33 20a3 3 0 1 0 0-.01"/></symbol>
+      <symbol id="i-video" viewBox="0 0 48 48"><path d="M5 12h30v24H5zM35 21l9-5v16l-9-5"/></symbol>
+      <symbol id="i-model" viewBox="0 0 48 48"><path d="M6 36l18-8 18 8-18 8zM6 36V26l18-8 18 8v10M24 28v16M12 23V12l12-6 12 6v11"/></symbol>
+      <symbol id="i-poster" viewBox="0 0 48 48"><path d="M10 4h28v40H10zM16 12h16M16 20h16M16 28h10M16 35h6"/></symbol>
+      <symbol id="i-proto" viewBox="0 0 48 48"><path d="M24 6l16 9v18l-16 9-16-9V15zM8 15l16 9 16-9M24 24v18"/></symbol>
+      <symbol id="i-people" viewBox="0 0 48 48"><path d="M16 22a6 6 0 1 0 0-.01M4 40c0-8 5-12 12-12s12 4 12 12M34 24a5 5 0 1 0 0-.01M32 29c8 0 12 4 12 11"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ CABEÇALHO / MENU ============ -->
+  <header class="site-header" id="topo">
+    <div class="site-header__inner container">
+      <a class="brand" href="#inicio" aria-label="Engenharia Civil — voltar ao início">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M2 2h28v28H2zM2 30L30 2M2 16h14V2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 16h14v14H16z" fill="var(--c-accent)"/></svg>
+        <span class="brand__text">Engenharia<br>Civil</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="menu" aria-label="Navegação principal">
+        <ul class="site-nav__list">
+          <li><a href="#profissao"><span class="site-nav__no" aria-hidden="true">02</span>A profissão</a></li>
+          <li><a href="#historia"><span class="site-nav__no" aria-hidden="true">03</span>História</a></li>
+          <li><a href="#areas"><span class="site-nav__no" aria-hidden="true">04</span>Áreas</a></li>
+          <li><a href="#formacao"><span class="site-nav__no" aria-hidden="true">05</span>Formação</a></li>
+          <li><a href="#mercado"><span class="site-nav__no" aria-hidden="true">06</span>Mercado</a></li>
+          <li><a href="#stand"><span class="site-nav__no" aria-hidden="true">07</span>Nosso stand</a></li>
+          <li><a href="#creditos"><span class="site-nav__no" aria-hidden="true">08</span>Créditos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ 01 · HERO ============ -->
+    <section class="hero section--dark" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__inner container">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">01</span> Feira de Profissões</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-line">Engenharia</span>
+            <span class="hero__title-line hero__title-line--accent">Civil</span>
+          </h1>
+          <p class="hero__slogan">“Projetar o futuro. Construir possibilidades.”</p>
+          <p class="hero__text">A Engenharia Civil transforma conhecimento científico em estruturas, espaços e soluções que melhoram a vida das pessoas: das casas e pontes às redes de água e esgoto que sustentam as cidades.</p>
+          <a class="btn" href="#profissao">
+            Explorar a profissão
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+
+        <figure class="hero__figure">
+          <!--
+            FOTOGRAFIA DO HERO (opcional):
+            salve uma foto arquitetônica em assets/images/hero.jpg (ideal: 1600×1000, até ~300 KB).
+            Se o arquivo existir, ele aparece sobre o desenho; se não existir, o desenho técnico é exibido.
+            Depois de adicionar a foto, ajuste o texto alternativo (alt) e o crédito abaixo.
+          -->
+          <img class="hero__photo" src="assets/images/hero.jpg" alt="Fotografia arquitetônica de uma grande estrutura de engenharia civil" width="1600" height="1000" fetchpriority="high" decoding="async">
+          <svg class="hero__drawing" viewBox="0 0 640 520" role="img" aria-labelledby="hero-draw-title" focusable="false">
+  <title id="hero-draw-title">Desenho técnico ilustrativo: elevação de uma ponte estaiada com dois pilones e cabos em leque.</title>
+  <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+    <!-- cota do vão central -->
+    <g class="dim">
+      <path d="M210 52 H430 M210 44 V68 M430 44 V68"/>
+      <path d="M210 52 l10 -4 v8 z M430 52 l-10 -4 v8 z" fill="currentColor"/>
+    </g>
+    <!-- cota da altura do pilone -->
+    <g class="dim">
+      <path d="M160 90 V338 M152 90 H190 M152 338 H190"/>
+      <path d="M160 90 l-4 10 h8 z M160 338 l-4 -10 h8 z" fill="currentColor"/>
+    </g>
+    <!-- pilones -->
+    <rect x="203" y="90" width="14" height="248" class="solid"/>
+    <rect x="423" y="90" width="14" height="248" class="solid"/>
+    <!-- pilares e fundações -->
+    <rect x="203" y="348" width="14" height="72" class="solid"/>
+    <rect x="423" y="348" width="14" height="72" class="solid"/>
+    <rect x="186" y="420" width="48" height="14" class="solid"/>
+    <rect x="406" y="420" width="48" height="14" class="solid"/>
+    <!-- tabuleiro -->
+    <rect x="30" y="338" width="580" height="10" class="solid"/>
+    <path d="M30 348 v16 M110 348 v16 M270 348 v16 M320 348 v16 M370 348 v16 M530 348 v16 M610 348 v16" class="thin"/>
+    <!-- estais -->
+    <path d="M210 108 L184 338 M210 108 L225 338 M430 108 L456 338 M430 108 L415 338 M210 124 L158 338 M210 124 L240 338 M430 124 L482 338 M430 124 L400 338 M210 140 L132 338 M210 140 L255 338 M430 140 L508 338 M430 140 L385 338 M210 156 L106 338 M210 156 L270 338 M430 156 L534 338 M430 156 L370 338 M210 172 L80 338 M210 172 L285 338 M430 172 L560 338 M430 172 L355 338 M210 188 L54 338 M210 188 L300 338 M430 188 L586 338 M430 188 L340 338 M210 204 L28 338 M210 204 L315 338 M430 204 L612 338 M430 204 L325 338" class="cable"/>
+    <!-- linha d'água -->
+    <path d="M10 420 H630" class="thin" stroke-dasharray="2 6"/>
+    <path d="M30 442 q12 -6 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0" class="thin"/>
+    <path d="M60 458 q12 -6 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0" class="thin"/>
+    <!-- selo do desenho -->
+    <g class="titleblock">
+      <rect x="400" y="468" width="230" height="40"/>
+      <path d="M400 488 H630 M520 468 V508"/>
+    </g>
+  </g>
+  <g class="labels" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="9" letter-spacing="1.4" fill="currentColor">
+    <text x="320" y="40" text-anchor="middle">VÃO CENTRAL</text>
+    <text x="146" y="214" transform="rotate(-90 146 214)" text-anchor="middle">ALTURA DO PILONE</text>
+    <text x="410" y="482">ELEVAÇÃO</text>
+    <text x="530" y="482">PONTE ESTAIADA</text>
+    <text x="410" y="502">ILUSTRATIVO</text>
+    <text x="530" y="502">SEM ESCALA</text>
+  </g>
+</svg>
+          <figcaption class="hero__caption">
+            <span class="hero__caption-drawing">Ilustração criada para este projeto: elevação de uma ponte estaiada.</span>
+            <span class="hero__caption-photo" hidden>Foto: [preencher autor e fonte da imagem, ex.: Nome do fotógrafo / Unsplash]</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <a class="hero__scroll" href="#profissao" aria-label="Rolar para a próxima seção">
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+        <span>Role para explorar</span>
+      </a>
+    </section>
+
+    <!-- ============ 02 · A PROFISSÃO ============ -->
+    <section class="section section--light" id="profissao" aria-labelledby="profissao-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">02</span> A profissão</p>
+          <h2 id="profissao-title">Muito além de <em>construir.</em></h2>
+        </header>
+
+        <div class="split reveal">
+          <div class="split__a">
+            <p class="lead">O engenheiro civil planeja, projeta, executa e fiscaliza obras, usando matemática, física, conhecimento de materiais e gestão para resolver problemas reais das cidades.</p>
+            <p>A rotina muda conforme a área de atuação. Pode incluir cálculos e projetos em escritório, acompanhamento de equipes no canteiro de obras, orçamentos, negociação com fornecedores e contato com órgãos públicos para licenças e fiscalização.</p>
+            <p>Em todos os casos, a profissão combina quatro compromissos: <strong>segurança</strong>, <strong>qualidade</strong>, <strong>orçamento</strong> e <strong>sustentabilidade</strong>.</p>
+          </div>
+
+          <div class="split__b">
+            <h3 class="h-small">O ciclo de uma obra</h3>
+            <ol class="cycle">
+              <li class="cycle__step">
+                <span class="cycle__no" aria-hidden="true">01</span>
+                <div><h4>Planejamento</h4><p>Estuda a necessidade, o terreno e a viabilidade técnica e econômica, e define prazos e custos.</p></div>
+              </li>
+              <li class="cycle__step">
+                <span class="cycle__no" aria-hidden="true">02</span>
+                <div><h4>Projeto</h4><p>Desenvolve ou coordena projetos de estrutura, fundações, instalações e infraestrutura, compatibilizando as disciplinas.</p></div>
+              </li>
+              <li class="cycle__step">
+                <span class="cycle__no" aria-hidden="true">03</span>
+                <div><h4>Execução</h4><p>Organiza equipes, materiais e equipamentos para transformar o projeto em obra, seguindo normas técnicas.</p></div>
+              </li>
+              <li class="cycle__step">
+                <span class="cycle__no" aria-hidden="true">04</span>
+                <div><h4>Fiscalização</h4><p>Verifica se a obra cumpre projeto, normas, prazos e contrato, e controla a qualidade dos serviços.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <h3 class="h-small">Não é só edifício: onde a Engenharia Civil está</h3>
+          <ul class="where">
+            <li><svg class="icon icon--xl" aria-hidden="true" focusable="false"><use href="#i-building"/></svg><h4>Edificações</h4><p>Casas, prédios, escolas e hospitais.</p></li>
+            <li><svg class="icon icon--xl" aria-hidden="true" focusable="false"><use href="#i-bridge"/></svg><h4>Infraestrutura</h4><p>Pontes, túneis, rodovias, ferrovias e barragens.</p></li>
+            <li><svg class="icon icon--xl" aria-hidden="true" focusable="false"><use href="#i-drop"/></svg><h4>Saneamento</h4><p>Tratamento de água e esgoto e drenagem urbana.</p></li>
+            <li><svg class="icon icon--xl" aria-hidden="true" focusable="false"><use href="#i-road"/></svg><h4>Mobilidade</h4><p>Vias, calçadas, corredores de ônibus e ferrovias.</p></li>
+            <li><svg class="icon icon--xl" aria-hidden="true" focusable="false"><use href="#i-tank"/></svg><h4>Abastecimento de água</h4><p>Captação, reservatórios e redes de distribuição.</p></li>
+            <li><svg class="icon icon--xl" aria-hidden="true" focusable="false"><use href="#i-city"/></svg><h4>Desenvolvimento urbano</h4><p>Urbanização, pavimentação, drenagem e obras públicas.</p></li>
+          </ul>
+        </div>
+
+        <div class="split split--tight reveal">
+          <div class="split__a">
+            <h3 class="h-small">Principais responsabilidades</h3>
+            <ul class="ticks">
+              <li>Avaliar a viabilidade técnica e econômica de empreendimentos.</li>
+              <li>Elaborar ou coordenar projetos e compatibilizar as diferentes disciplinas.</li>
+              <li>Orçar, planejar prazos e contratar equipes e fornecedores.</li>
+              <li>Acompanhar a execução conforme normas técnicas (como as da ABNT) e regras de segurança.</li>
+              <li>Controlar a qualidade de materiais e serviços e fiscalizar obras.</li>
+              <li>Assumir a responsabilidade técnica pelos serviços, formalizada por meio da Anotação de Responsabilidade Técnica (ART).</li>
+            </ul>
+          </div>
+          <aside class="statement split__b" aria-label="Importância social">
+            <p class="statement__text">Onde há água tratada, uma ponte segura ou uma rua que não alaga, há trabalho de Engenharia Civil.</p>
+            <p class="statement__note">A profissão é essencial para a saúde, a mobilidade, a economia e a qualidade de vida das cidades.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 · HISTÓRIA ============ -->
+    <section class="section section--dark" id="historia" aria-labelledby="historia-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">03</span> História</p>
+          <h2 id="historia-title">Uma profissão que constrói a <em>história.</em></h2>
+          <p class="section-head__lead">Seis marcos mostram como materiais, técnicas e ferramentas mudaram o jeito de projetar e construir. Escolha um período para explorar.</p>
+        </header>
+
+        <div class="timeline reveal" data-timeline>
+          <div class="timeline__tabs" role="tablist" aria-label="Linha do tempo da Engenharia Civil">
+            <button class="timeline__tab" role="tab" id="tab-1" aria-controls="tl-1" aria-selected="true" type="button"><span class="timeline__tab-no">01</span><span class="timeline__tab-label">Antiguidade</span></button>
+            <button class="timeline__tab" role="tab" id="tab-2" aria-controls="tl-2" aria-selected="false" tabindex="-1" type="button"><span class="timeline__tab-no">02</span><span class="timeline__tab-label">Idade Média</span></button>
+            <button class="timeline__tab" role="tab" id="tab-3" aria-controls="tl-3" aria-selected="false" tabindex="-1" type="button"><span class="timeline__tab-no">03</span><span class="timeline__tab-label">Revolução Industrial</span></button>
+            <button class="timeline__tab" role="tab" id="tab-4" aria-controls="tl-4" aria-selected="false" tabindex="-1" type="button"><span class="timeline__tab-no">04</span><span class="timeline__tab-label">Século XIX</span></button>
+            <button class="timeline__tab" role="tab" id="tab-5" aria-controls="tl-5" aria-selected="false" tabindex="-1" type="button"><span class="timeline__tab-no">05</span><span class="timeline__tab-label">Século XX</span></button>
+            <button class="timeline__tab" role="tab" id="tab-6" aria-controls="tl-6" aria-selected="false" tabindex="-1" type="button"><span class="timeline__tab-no">06</span><span class="timeline__tab-label">Atualidade</span></button>
+          </div>
+
+          <!-- 1 -->
+          <article class="tl-panel" role="tabpanel" id="tl-1" aria-labelledby="tab-1" tabindex="0">
+            <figure class="tl-panel__art">
+              <svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="draw">
+                  <path d="M10 170H310"/>
+                  <path d="M30 170L100 60l70 110z"/>
+                  <path d="M100 60V170" class="dash"/>
+                  <path d="M48 140H152M66 110H134M84 85H116"/>
+                  <rect x="196" y="96" width="112" height="74"/>
+                  <path d="M200 170V140a10 10 0 0 1 20 0V170M228 170V140a10 10 0 0 1 20 0V170M256 170V140a10 10 0 0 1 20 0V170M284 170V140a10 10 0 0 1 20 0V170"/>
+                  <path d="M196 96h112" class="accent"/>
+                </g>
+              </svg>
+              <figcaption>Pirâmide e aqueduto em arcos: ilustração criada para este projeto.</figcaption>
+            </figure>
+            <div class="tl-panel__body">
+              <p class="tl-panel__period">Antiguidade</p>
+              <h3>Pedra, água e estradas</h3>
+              <p>Muito antes de a profissão ter esse nome, civilizações já organizavam grandes obras. Os egípcios ergueram monumentos de pedra, como as pirâmides; povos antigos criaram sistemas de irrigação para levar água às plantações; e os romanos construíram estradas, pontes e aquedutos que conectavam cidades de um grande império.</p>
+              <p class="tl-panel__sources">Fonte: <a href="https://www.britannica.com/technology/civil-engineering" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica — Civil engineering<span class="sr-only"> (abre em nova aba)</span></a></p>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="tl-panel" role="tabpanel" id="tl-2" aria-labelledby="tab-2" tabindex="0">
+            <figure class="tl-panel__art">
+              <svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="draw">
+                  <path d="M10 170H310"/>
+                  <rect x="125" y="60" width="70" height="110"/>
+                  <path d="M120 60L160 30l40 30"/>
+                  <path d="M140 170V115Q140 85 160 70Q180 85 180 115V170"/>
+                  <rect x="235" y="110" width="16" height="60"/><path d="M235 110l8-18 8 18"/>
+                  <rect x="69" y="110" width="16" height="60"/><path d="M69 110l8-18 8 18"/>
+                  <path d="M195 80Q225 82 240 112M195 100Q218 102 238 124" class="accent"/>
+                  <path d="M125 80Q95 82 80 112M125 100Q102 102 82 124" class="accent"/>
+                </g>
+              </svg>
+              <figcaption>Arco ogival e arcobotantes: ilustração criada para este projeto.</figcaption>
+            </figure>
+            <div class="tl-panel__body">
+              <p class="tl-panel__period">Idade Média</p>
+              <h3>Arcos, fortificações e catedrais</h3>
+              <p>Pontes, fortificações e grandes catedrais marcam a construção medieval. As catedrais góticas, com arcos ogivais e arcobotantes, mostram como levar o peso das estruturas até o solo e, ao mesmo tempo, erguer paredes mais altas e abertas à luz.</p>
+              <p class="tl-panel__sources">Fonte: <a href="https://www.britannica.com/technology/civil-engineering" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica — Civil engineering<span class="sr-only"> (abre em nova aba)</span></a></p>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="tl-panel" role="tabpanel" id="tl-3" aria-labelledby="tab-3" tabindex="0">
+            <figure class="tl-panel__art">
+              <svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="draw">
+                  <path d="M40 66H280"/>
+                  <path d="M50 150A110 80 0 0 1 270 150M62 150A98 70 0 0 1 258 150"/>
+                  <path d="M100 66V83M130 66V73M160 66V70M190 66V73M220 66V83" class="accent"/>
+                  <rect x="36" y="150" width="20" height="24"/><rect x="264" y="150" width="20" height="24"/>
+                  <path d="M10 184H310" class="dash"/>
+                </g>
+              </svg>
+              <figcaption>Ponte em arco de ferro: ilustração criada para este projeto.</figcaption>
+            </figure>
+            <div class="tl-panel__body">
+              <p class="tl-panel__period">A partir do século XVIII</p>
+              <h3>Ferro, máquinas e novas escalas</h3>
+              <p>Com a Revolução Industrial, o ferro passou a ser produzido em maior escala e novas máquinas transformaram a forma de construir. Um símbolo do período é a Iron Bridge, sobre o rio Severn, na Inglaterra, considerada a primeira grande ponte de ferro fundido do mundo: seus arcos foram erguidos em 1779. Mais tarde, o aço ampliou ainda mais os vãos e as alturas possíveis.</p>
+              <p class="tl-panel__mark">Marco: Iron Bridge, 1779</p>
+              <p class="tl-panel__sources">Fontes:
+                <a href="https://ironbridge.org.uk/about-us/the-iron-bridge" target="_blank" rel="noopener noreferrer">Ironbridge Gorge Museum Trust<span class="sr-only"> (abre em nova aba)</span></a> ·
+                <a href="https://whc.unesco.org/en/list/371" target="_blank" rel="noopener noreferrer">UNESCO — Ironbridge Gorge<span class="sr-only"> (abre em nova aba)</span></a></p>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="tl-panel" role="tabpanel" id="tl-4" aria-labelledby="tab-4" tabindex="0">
+            <figure class="tl-panel__art">
+              <svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="draw">
+                  <rect x="40" y="70" width="240" height="60"/>
+                  <path d="M48 82H272" /><path d="M48 118H272M48 122H272" class="accent"/>
+                  <path d="M70 78V122M100 78V122M130 78V122M160 78V122M190 78V122M220 78V122M250 78V122" class="thin"/>
+                  <path d="M60 130l-10 18h20zM260 130l-10 18h20zM30 148H290"/>
+                  <path d="M110 36V62M160 36V62M210 36V62" /><path d="M106 56l4 8 4-8M156 56l4 8 4-8M206 56l4 8 4-8" />
+                </g>
+                <g class="labels"><text x="48" y="168">CONCRETO + ARMADURA DE AÇO</text></g>
+              </svg>
+              <figcaption>Viga de concreto armado em elevação: ilustração criada para este projeto.</figcaption>
+            </figure>
+            <div class="tl-panel__body">
+              <p class="tl-panel__period">Século XIX</p>
+              <h3>Concreto armado e engenharia moderna</h3>
+              <p>Em 1824, o inglês Joseph Aspdin patenteou o cimento Portland, base do concreto moderno. Em 1867, o francês Joseph Monier patenteou o uso de armaduras de ferro no concreto, ideia geralmente creditada a ele e que deu origem ao concreto armado. No mesmo século, a Engenharia Civil se consolidou como disciplina universitária: o King’s College London, por exemplo, passou a ensiná-la em 1838.</p>
+              <p class="tl-panel__mark">Marcos: cimento Portland (patente, 1824) · concreto armado (patente, 1867)</p>
+              <p class="tl-panel__sources">Fontes:
+                <a href="https://www.britannica.com/technology/concrete-building-material" target="_blank" rel="noopener noreferrer">Britannica — Concrete<span class="sr-only"> (abre em nova aba)</span></a> ·
+                <a href="https://www.ce.memphis.edu/1101/notes/concrete/section_2_history.html" target="_blank" rel="noopener noreferrer">University of Memphis — History of Concrete Building Construction<span class="sr-only"> (abre em nova aba)</span></a> ·
+                <a href="https://www.britannica.com/technology/civil-engineering" target="_blank" rel="noopener noreferrer">Britannica — Civil engineering<span class="sr-only"> (abre em nova aba)</span></a></p>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="tl-panel" role="tabpanel" id="tl-5" aria-labelledby="tab-5" tabindex="0">
+            <figure class="tl-panel__art">
+              <svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="draw">
+                  <path d="M10 170H310"/>
+                  <path d="M128 44h24l80 126H108z"/>
+                  <path d="M20 58q6-4 12 0t12 0t12 0t12 0t12 0t12 0t12 0t12 0" class="accent"/>
+                  <path d="M20 80H118M20 100H113M20 120H111M20 140H109M20 160H107" class="dash"/>
+                  <path d="M170 96L240 146" class="accent"/>
+                  <rect x="238" y="140" width="48" height="30"/>
+                  <path d="M250 140V128M270 140V128M244 128h32"/>
+                </g>
+              </svg>
+              <figcaption>Seção de barragem e casa de força: ilustração criada para este projeto.</figcaption>
+            </figure>
+            <div class="tl-panel__body">
+              <p class="tl-panel__period">Século XX</p>
+              <h3>Infraestrutura em grande escala</h3>
+              <p>O século XX foi marcado pela expansão de rodovias, barragens e edifícios cada vez mais altos, apoiados no concreto armado, no aço e em novos métodos de cálculo. No Brasil, um exemplo é a Usina de Itaipu, no Paraná: as obras começaram em 1975 e a usina passou a gerar energia em 1984, mobilizando mais de 40 mil trabalhadores no auge da construção.</p>
+              <p class="tl-panel__mark">Marco: Itaipu — obras iniciadas em 1975 · geração de energia desde 1984</p>
+              <p class="tl-panel__sources">Fonte: <a href="https://www.itaipu.gov.br/sites/default/files/af_df/1702_022_atualizacao_revista_IB_2017_digital_b.pdf" target="_blank" rel="noopener noreferrer">Itaipu Binacional — publicação institucional (PDF)<span class="sr-only"> (abre em nova aba)</span></a></p>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="tl-panel" role="tabpanel" id="tl-6" aria-labelledby="tab-6" tabindex="0">
+            <figure class="tl-panel__art">
+              <svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="draw">
+                  <path d="M80 60H200V170H80zM200 60l40-30V140l-40 30M80 60l40-30H240"/>
+                  <path d="M80 82H200M80 104H200M80 126H200M80 148H200M120 30V140M200 82l40-30M200 104l40-30M200 126l40-30M200 148l40-30" class="thin"/>
+                  <path d="M120 60V170M160 60V170" class="thin"/>
+                </g>
+                <g class="nodes"><circle cx="80" cy="60" r="3"/><circle cx="200" cy="60" r="3"/><circle cx="240" cy="30" r="3"/><circle cx="120" cy="30" r="3"/><circle cx="80" cy="170" r="3"/><circle cx="200" cy="170" r="3"/><circle cx="240" cy="140" r="3"/></g>
+                <path d="M255 118v30M240 133h30" class="accent"/>
+                <circle cx="255" cy="133" r="9" class="accent" fill="none"/>
+              </svg>
+              <figcaption>Modelo digital em estrutura aramada (BIM): ilustração criada para este projeto.</figcaption>
+            </figure>
+            <div class="tl-panel__body">
+              <p class="tl-panel__period">Atualidade</p>
+              <h3>Modelos digitais, novos materiais e sustentabilidade</h3>
+              <p>Hoje, projetos são desenvolvidos em modelos digitais que reúnem geometria, quantidades e informações da obra: é o BIM (Modelagem da Informação da Construção). No Brasil, o Decreto nº 10.306/2020 estabeleceu o uso do BIM em obras e serviços de engenharia da administração pública federal. Ao lado dele, avançam novos materiais, a automação de processos e práticas de construção sustentável.</p>
+              <p class="tl-panel__sources">Fonte: <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10306.htm" target="_blank" rel="noopener noreferrer">Presidência da República — Decreto nº 10.306/2020<span class="sr-only"> (abre em nova aba)</span></a></p>
+            </div>
+          </article>
+
+          <div class="timeline__controls" aria-label="Navegar na linha do tempo">
+            <button class="btn btn--ghost" type="button" data-tl-prev>
+              <svg class="icon icon--flip" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg> Anterior
+            </button>
+            <p class="timeline__counter" aria-live="polite"><span data-tl-current>1</span> / 6</p>
+            <button class="btn btn--ghost" type="button" data-tl-next>
+              Próximo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 · ÁREAS DE ATUAÇÃO ============ -->
+    <section class="section section--light" id="areas" aria-labelledby="areas-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">04</span> Áreas de atuação</p>
+          <h2 id="areas-title">Diferentes caminhos. Um mesmo <em>propósito.</em></h2>
+          <p class="section-head__lead">A Engenharia Civil reúne várias especializações. Estas são seis das principais; abra cada cartão para ver exemplos de atividades.</p>
+        </header>
+
+        <div class="areas">
+          <article class="area reveal">
+            <p class="area__no" aria-hidden="true">A1</p>
+            <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-frame"/></svg>
+            <h3>Estruturas</h3>
+            <p>Define o “esqueleto” de edifícios, pontes e viadutos, garantindo que suportem cargas com segurança. Trabalha com concreto, aço e outros materiais.</p>
+            <button class="area__toggle" type="button" aria-expanded="false" aria-controls="area-1">Atividades típicas <span class="area__plus" aria-hidden="true"></span></button>
+            <ul class="area__details" id="area-1" hidden>
+              <li>Cálculo e dimensionamento de pilares, vigas e lajes</li>
+              <li>Projeto de pontes e viadutos</li>
+              <li>Análise estrutural com software</li>
+              <li>Reforço e recuperação de estruturas existentes</li>
+            </ul>
+          </article>
+
+          <article class="area reveal">
+            <p class="area__no" aria-hidden="true">A2</p>
+            <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-soil"/></svg>
+            <h3>Geotecnia</h3>
+            <p>Estuda o solo e as rochas para que toda obra tenha uma base segura: fundações, contenções de terra e estabilidade de encostas.</p>
+            <button class="area__toggle" type="button" aria-expanded="false" aria-controls="area-2">Atividades típicas <span class="area__plus" aria-hidden="true"></span></button>
+            <ul class="area__details" id="area-2" hidden>
+              <li>Sondagens e ensaios de solo</li>
+              <li>Projeto de fundações (sapatas, estacas)</li>
+              <li>Muros de contenção e estabilização de taludes</li>
+              <li>Escavações e aterros</li>
+            </ul>
+          </article>
+
+          <article class="area reveal">
+            <p class="area__no" aria-hidden="true">A3</p>
+            <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-road"/></svg>
+            <h3>Transportes</h3>
+            <p>Planeja, projeta e constrói rodovias, ferrovias e sistemas de mobilidade urbana, pensando em segurança, fluidez e acesso para as pessoas.</p>
+            <button class="area__toggle" type="button" aria-expanded="false" aria-controls="area-3">Atividades típicas <span class="area__plus" aria-hidden="true"></span></button>
+            <ul class="area__details" id="area-3" hidden>
+              <li>Projeto geométrico de vias</li>
+              <li>Pavimentação</li>
+              <li>Estudos de tráfego</li>
+              <li>Terminais, corredores de ônibus e ferrovias</li>
+            </ul>
+          </article>
+
+          <article class="area reveal">
+            <p class="area__no" aria-hidden="true">A4</p>
+            <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-drop"/></svg>
+            <h3>Saneamento</h3>
+            <p>Cuida do abastecimento de água, do esgotamento sanitário e da drenagem urbana, com impacto direto na saúde pública e no meio ambiente.</p>
+            <button class="area__toggle" type="button" aria-expanded="false" aria-controls="area-4">Atividades típicas <span class="area__plus" aria-hidden="true"></span></button>
+            <ul class="area__details" id="area-4" hidden>
+              <li>Redes de água e de esgoto</li>
+              <li>Estações de tratamento</li>
+              <li>Drenagem das águas da chuva</li>
+              <li>Manejo de resíduos sólidos</li>
+            </ul>
+          </article>
+
+          <article class="area reveal">
+            <p class="area__no" aria-hidden="true">A5</p>
+            <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-dam"/></svg>
+            <h3>Recursos hídricos</h3>
+            <p>Estuda e gerencia a água nas bacias hidrográficas: barragens, controle de enchentes e uso múltiplo da água para pessoas, indústria e agricultura.</p>
+            <button class="area__toggle" type="button" aria-expanded="false" aria-controls="area-5">Atividades típicas <span class="area__plus" aria-hidden="true"></span></button>
+            <ul class="area__details" id="area-5" hidden>
+              <li>Hidrologia: chuvas e vazões dos rios</li>
+              <li>Barragens e reservatórios</li>
+              <li>Controle de cheias</li>
+              <li>Irrigação e gestão dos usos da água</li>
+            </ul>
+          </article>
+
+          <article class="area reveal">
+            <p class="area__no" aria-hidden="true">A6</p>
+            <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-crane"/></svg>
+            <h3>Construção e gestão de obras</h3>
+            <p>Transforma o projeto em obra: planejamento, execução, orçamento, fiscalização e controle de qualidade, sempre com foco em prazo, custo e segurança.</p>
+            <button class="area__toggle" type="button" aria-expanded="false" aria-controls="area-6">Atividades típicas <span class="area__plus" aria-hidden="true"></span></button>
+            <ul class="area__details" id="area-6" hidden>
+              <li>Orçamento e cronograma</li>
+              <li>Gestão de equipes e fornecedores</li>
+              <li>Controle tecnológico de materiais</li>
+              <li>Segurança no canteiro e fiscalização</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="more-paths reveal" aria-labelledby="more-title">
+          <h3 id="more-title">E há outras possibilidades</h3>
+          <p>Essas seis áreas não esgotam a profissão. Entre outras, o engenheiro civil também pode seguir caminhos como:</p>
+          <ul class="chips">
+            <li>Perícias e avaliações de imóveis</li>
+            <li>Patologia e recuperação de construções</li>
+            <li>Projetos de instalações prediais</li>
+            <li>BIM e tecnologia da construção</li>
+            <li>Obras com foco em sustentabilidade e meio ambiente</li>
+            <li>Fiscalização e licenciamento no setor público</li>
+            <li>Docência e pesquisa</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ 05 · FORMAÇÃO ============ -->
+    <section class="section section--concrete" id="formacao" aria-labelledby="formacao-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">05</span> Formação profissional</p>
+          <h2 id="formacao-title">O conhecimento por trás de cada <em>estrutura.</em></h2>
+        </header>
+
+        <div class="split reveal">
+          <div class="split__a">
+            <p class="lead">A formação começa na graduação em Engenharia Civil, um curso de nível superior que une ciências básicas, tecnologia e prática.</p>
+            <p>As Diretrizes Curriculares Nacionais dos cursos de Engenharia, definidas pelo Conselho Nacional de Educação em 2019, orientam essa formação. <strong>A duração do curso e a organização das disciplinas dependem de cada instituição e do seu projeto pedagógico.</strong></p>
+            <p>Segundo essas diretrizes, o estágio curricular supervisionado e o projeto final de curso são componentes obrigatórios. Laboratórios e atividades práticas completam o aprendizado.</p>
+          </div>
+          <div class="split__b">
+            <h3 class="h-small">O que se estuda</h3>
+            <table class="index-table">
+              <caption class="sr-only">Principais grupos de disciplinas e exemplos de conteúdos</caption>
+              <thead><tr><th scope="col">Grupo</th><th scope="col">Exemplos de conteúdos</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Ciências básicas</th><td>Cálculo, álgebra linear, estatística, física, química</td></tr>
+                <tr><th scope="row">Desenho e representação</th><td>Desenho técnico, CAD, BIM, topografia</td></tr>
+                <tr><th scope="row">Materiais de construção</th><td>Cimento, concreto, aço, cerâmicos, ensaios</td></tr>
+                <tr><th scope="row">Estruturas</th><td>Resistência dos materiais, análise estrutural, concreto e aço</td></tr>
+                <tr><th scope="row">Geotecnia</th><td>Mecânica dos solos, fundações, obras de terra</td></tr>
+                <tr><th scope="row">Hidráulica e saneamento</th><td>Mecânica dos fluidos, hidráulica, hidrologia, saneamento</td></tr>
+                <tr><th scope="row">Gestão</th><td>Planejamento e orçamento, segurança do trabalho, legislação e ética</td></tr>
+              </tbody>
+            </table>
+            <p class="note">Os nomes e a ordem das disciplinas variam conforme a instituição.</p>
+          </div>
+        </div>
+
+        <div class="competences reveal">
+          <div>
+            <h3 class="h-small">Competências técnicas</h3>
+            <ul class="ticks">
+              <li>Raciocínio matemático e científico</li>
+              <li>Leitura e elaboração de projetos</li>
+              <li>Uso de software e modelagem digital</li>
+              <li>Conhecimento de normas técnicas</li>
+              <li>Orçamento e planejamento de obras</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="h-small">Competências humanas</h3>
+            <ul class="ticks">
+              <li>Comunicação clara com equipes e clientes</li>
+              <li>Trabalho em equipe e liderança</li>
+              <li>Ética e responsabilidade profissional</li>
+              <li>Resolução de problemas sob prazos e custos</li>
+              <li>Aprendizado contínuo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="registro reveal">
+          <h3 class="h-small">Registro profissional: Sistema Confea/Crea</h3>
+          <ol class="steps">
+            <li class="steps__item">
+              <span class="steps__no" aria-hidden="true">1</span>
+              <p><strong>Graduação concluída.</strong> O registro é solicitado depois da formatura.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__no" aria-hidden="true">2</span>
+              <p><strong>Registro no Crea.</strong> O profissional se registra no Conselho Regional de Engenharia e Agronomia (Crea) de sua região, que integra o Sistema Confea/Crea.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__no" aria-hidden="true">3</span>
+              <p><strong>Atribuições definidas.</strong> A câmara especializada do Crea analisa o histórico escolar e a matriz curricular do curso para conceder as atribuições profissionais.</p>
+            </li>
+          </ol>
+          <p class="callout">
+            <strong>Importante:</strong> as atribuições dependem da formação efetiva de cada profissional e da análise do conselho competente. Nem todo engenheiro civil possui automaticamente todas as atribuições possíveis.
+            <span class="callout__src">Fontes:
+              <a href="https://www.confea.org.br/profissional/atribuicoes-e-sombreamento" target="_blank" rel="noopener noreferrer">Confea — Atribuições e sombreamento<span class="sr-only"> (abre em nova aba)</span></a> ·
+              <a href="https://normativos.confea.org.br/Ementas/Visualizar?id=266" target="_blank" rel="noopener noreferrer">Confea — Resolução nº 218/1973<span class="sr-only"> (abre em nova aba)</span></a> ·
+              <a href="https://www.gov.br/mec/pt-br/cne/resolucoes/resolucoes-cne-ces-2019" target="_blank" rel="noopener noreferrer">MEC — Resoluções CNE/CES de 2019<span class="sr-only"> (abre em nova aba)</span></a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 · MERCADO DE TRABALHO ============ -->
+    <section class="section section--dark" id="mercado" aria-labelledby="mercado-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">06</span> Mercado de trabalho</p>
+          <h2 id="mercado-title">Onde a engenharia encontra <em>oportunidades.</em></h2>
+          <p class="section-head__lead">Dados de fontes oficiais e institucionais, em três escalas: Brasil, Paraná e Curitiba. Leia as observações de cada indicador: cada número mede uma coisa diferente.</p>
+        </header>
+
+        <div class="scales">
+          <!-- BRASIL -->
+          <article class="scale reveal" aria-labelledby="sc-br">
+            <p class="scale__tag">Brasil · Engenheiro civil</p>
+            <h3 class="sr-only" id="sc-br">Brasil: salário de contratação de engenheiros civis</h3>
+            <p class="scale__value"><span class="scale__unit">R$</span> 10.300</p>
+            <p class="scale__label">mediana do salário de contratação CLT, por mês</p>
+            <dl class="scale__meta">
+              <div><dt>Metade das contratações</dt><dd>entre R$ 5.750 e R$ 13.000</dd></div>
+              <div><dt>Amostra</dt><dd>12.119 admissões</dd></div>
+              <div><dt>Período</dt><dd>setembro de 2025 a agosto de 2026</dd></div>
+            </dl>
+            <p class="scale__src">Fonte: <a href="https://recoloca.me/salario/engenheiro-civil" target="_blank" rel="noopener noreferrer">Novo CAGED/MTE, compilação Recoloca<span class="sr-only"> (abre em nova aba)</span></a>. Atualização de 26/10/2026.</p>
+          </article>
+
+          <!-- PARANÁ -->
+          <article class="scale reveal" aria-labelledby="sc-pr">
+            <p class="scale__tag">Paraná · Engenheiro civil</p>
+            <h3 class="sr-only" id="sc-pr">Paraná: salário de contratação de engenheiros civis</h3>
+            <p class="scale__value"><span class="scale__unit">R$</span> 9.390</p>
+            <p class="scale__label">mediana do salário de contratação CLT, por mês</p>
+            <dl class="scale__meta">
+              <div><dt>Metade das contratações</dt><dd>entre R$ 5.000 e R$ 13.020</dd></div>
+              <div><dt>Amostra</dt><dd>563 admissões</dd></div>
+              <div><dt>Período</dt><dd>setembro de 2025 a agosto de 2026</dd></div>
+            </dl>
+            <p class="scale__src">Fonte: <a href="https://recoloca.me/salario/engenheiro-civil/pr" target="_blank" rel="noopener noreferrer">Novo CAGED/MTE, compilação Recoloca<span class="sr-only"> (abre em nova aba)</span></a>. Atualização de 26/10/2026.</p>
+          </article>
+
+          <!-- CURITIBA -->
+          <article class="scale scale--sector reveal" aria-labelledby="sc-cwb">
+            <p class="scale__tag">Curitiba · Setor da construção civil</p>
+            <h3 class="sr-only" id="sc-cwb">Curitiba: saldo de empregos formais na construção civil</h3>
+            <p class="scale__value"><span class="scale__unit">+</span> 1.122</p>
+            <p class="scale__label">empregos formais (saldo entre admissões e desligamentos)</p>
+            <dl class="scale__meta">
+              <div><dt>Período</dt><dd>janeiro a agosto de 2026</dd></div>
+              <div><dt>Base</dt><dd>Caged/MTE, divulgado pela Prefeitura</dd></div>
+            </dl>
+            <p class="warn"><strong>Atenção:</strong> este número representa o setor da construção civil como um todo, e não somente engenheiros civis.</p>
+            <p class="scale__src">Fonte: <a href="https://www.curitiba.pr.gov.br/noticias/em-curitiba-servicos-e-construcao-civil-lideram-geracao-de-vagas-com-carteira-assinada-ate-agosto/85265" target="_blank" rel="noopener noreferrer">Prefeitura de Curitiba, notícia de 01/10/2026<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+          </article>
+        </div>
+
+        <!-- Gráfico 1: Brasil x Paraná -->
+        <figure class="chart reveal" aria-labelledby="chart1-title" data-chart>
+          <figcaption class="chart__head">
+            <h3 id="chart1-title">Salário de contratação CLT: Brasil × Paraná</h3>
+            <p>A barra mostra a faixa em que ficou a metade das contratações; o marcador laranja indica a mediana. Setembro/2025 a agosto/2026.</p>
+          </figcaption>
+
+          <div class="range-chart" role="img" aria-label="Gráfico de faixas salariais. Brasil: mediana de R$ 10.300; metade das contratações entre R$ 5.750 e R$ 13.000. Paraná: mediana de R$ 9.390; metade das contratações entre R$ 5.000 e R$ 13.020.">
+            <div class="range-row">
+              <p class="range-row__label">Brasil <small>12.119 admissões</small></p>
+              <div class="range-track">
+                <div class="range-bar" style="--from:38.333%; --width:48.333%"></div>
+                <div class="range-median" style="--at:68.667%"></div>
+              </div>
+              <p class="range-row__values"><span>Mediana <strong>R$ 10.300</strong></span><span>Faixa central R$ 5.750 – R$ 13.000</span></p>
+            </div>
+            <div class="range-row">
+              <p class="range-row__label">Paraná <small>563 admissões</small></p>
+              <div class="range-track">
+                <div class="range-bar" style="--from:33.333%; --width:53.467%"></div>
+                <div class="range-median" style="--at:62.6%"></div>
+              </div>
+              <p class="range-row__values"><span>Mediana <strong>R$ 9.390</strong></span><span>Faixa central R$ 5.000 – R$ 13.020</span></p>
+            </div>
+            <div class="range-axis" aria-hidden="true"><span>R$ 0</span><span>R$ 5 mil</span><span>R$ 10 mil</span><span>R$ 15 mil</span></div>
+          </div>
+
+          <p class="chart__note">Valores mensais em reais. São salários de contratação em admissões CLT, não garantia de remuneração individual. Fonte: Novo CAGED/MTE, compilação Recoloca.</p>
+        </figure>
+
+        <!-- Panorama nacional -->
+        <div class="panorama">
+          <header class="panorama__head reveal">
+            <h3 class="h-medium">Panorama nacional do setor</h3>
+            <p>Os números a seguir descrevem a <strong>construção civil como um todo</strong> (engenheiros, técnicos, operários e outros profissionais), e não apenas os engenheiros civis.</p>
+          </header>
+
+          <ul class="kpis reveal">
+            <li class="kpi">
+              <p class="kpi__value">200.431</p>
+              <p class="kpi__label">empregos formais criados pela construção civil brasileira entre janeiro e agosto de 2026</p>
+            </li>
+            <li class="kpi">
+              <p class="kpi__value">79.065</p>
+              <p class="kpi__label">vagas em obras de infraestrutura no período: o melhor resultado da série histórica do Novo Caged para janeiro a agosto</p>
+            </li>
+            <li class="kpi">
+              <p class="kpi__value">3.150.781</p>
+              <p class="kpi__label">trabalhadores formais no setor em agosto de 2026</p>
+            </li>
+          </ul>
+
+          <figure class="chart reveal" aria-labelledby="chart2-title" data-chart>
+            <figcaption class="chart__head">
+              <h3 id="chart2-title">Saldo de empregos por segmento da construção</h3>
+              <p>Brasil, janeiro a agosto de 2026. Saldo = admissões menos desligamentos. O traço branco na linha de infraestrutura marca o resultado do mesmo período de 2025.</p>
+            </figcaption>
+
+            <div class="bar-chart" role="img" aria-label="Gráfico de barras do saldo de empregos formais por segmento da construção, de janeiro a agosto de 2026. Obras de infraestrutura: 79.065 vagas, ante 62.312 no mesmo período de 2025. Construção de edifícios: 66.503. Serviços especializados para construção: 54.863.">
+              <div class="bar-row">
+                <p class="bar-row__label">Obras de infraestrutura</p>
+                <div class="bar-track">
+                  <div class="bar bar--accent" style="--w:87.85%"></div>
+                  <div class="bar-ref" style="--at:69.24%"><span class="sr-only">Mesmo período de 2025: 62.312</span></div>
+                </div>
+                <p class="bar-row__value">79.065</p>
+              </div>
+              <div class="bar-row">
+                <p class="bar-row__label">Construção de edifícios</p>
+                <div class="bar-track"><div class="bar" style="--w:73.89%"></div></div>
+                <p class="bar-row__value">66.503</p>
+              </div>
+              <div class="bar-row">
+                <p class="bar-row__label">Serviços especializados para construção</p>
+                <div class="bar-track"><div class="bar" style="--w:60.96%"></div></div>
+                <p class="bar-row__value">54.863</p>
+              </div>
+              <div class="bar-axis" aria-hidden="true"><span>0</span><span>30 mil</span><span>60 mil</span><span>90 mil</span></div>
+            </div>
+
+            <p class="chart__note">Infraestrutura cresceu 26,89% em relação a jan–ago de 2025 (62.312 vagas). Edifícios e serviços especializados seguem positivos, porém em ritmo inferior ao de 2025. Fonte: CBIC, com dados do Novo Caged/MTE.</p>
+          </figure>
+
+          <div class="interpret reveal">
+            <h3 class="h-small">Como interpretar</h3>
+            <p>O setor como um todo está empregando mais, mas <strong>nem todos os segmentos crescem no mesmo ritmo</strong>. A infraestrutura teve desempenho especialmente forte, enquanto a construção de edifícios e os serviços especializados criaram vagas em ritmo menor que o do ano passado. Por isso, as oportunidades variam conforme a área de atuação e a região.</p>
+            <div class="interpret__cols">
+              <div>
+                <h4>Oportunidades</h4>
+                <ul class="ticks">
+                  <li>Obras de infraestrutura em alta: melhor resultado da série do Novo Caged (iniciada em 2020) para janeiro a agosto.</li>
+                  <li>Número de trabalhadores formais no setor 3% acima do registrado em agosto de 2025.</li>
+                  <li>Crédito imobiliário (FGTS e SBPE) de R$ 222,9 bilhões entre janeiro e agosto de 2026, alta de 20,94% sobre o mesmo período de 2025.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Desafios</h4>
+                <ul class="ticks ticks--warn">
+                  <li>Juros elevados: citados por 40% dos empresários como um dos principais problemas, no 3º trimestre de 2026.</li>
+                  <li>Custos acima da inflação: o INCC acumulou alta de 6,64% em 12 meses até setembro.</li>
+                  <li>Nível de atividade de 45,9 pontos no 3º trimestre, abaixo da linha de 50, que indica retração segundo os empresários.</li>
+                </ul>
+              </div>
+            </div>
+            <p class="chart__note">Fontes:
+              <a href="https://cbic.org.br/construcao-gera-mais-de-200-mil-novos-empregos-formais-em-2026/" target="_blank" rel="noopener noreferrer">CBIC — Construção gera mais de 200 mil novos empregos formais em 2026<span class="sr-only"> (abre em nova aba)</span></a> ·
+              <a href="https://cbic.org.br/infraestrutura-lidera-geracao-de-empregos-na-construcao-e-registra-melhor-resultado-da-serie-historica-aponta-cbic/" target="_blank" rel="noopener noreferrer">CBIC — Infraestrutura lidera geração de empregos<span class="sr-only"> (abre em nova aba)</span></a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Curitiba em contexto -->
+        <figure class="chart chart--compact reveal" aria-labelledby="chart3-title" data-chart>
+          <figcaption class="chart__head">
+            <h3 id="chart3-title">Curitiba: saldo de empregos formais por setor</h3>
+            <p>Janeiro a agosto de 2026. Cada barra representa um setor da economia, e não uma profissão.</p>
+          </figcaption>
+          <div class="bar-chart" role="img" aria-label="Gráfico de barras do saldo de empregos formais em Curitiba, de janeiro a agosto de 2026. Serviços: 15.552. Construção civil: 1.122. Comércio: 962. Indústria: 623.">
+            <div class="bar-row">
+              <p class="bar-row__label">Serviços</p>
+              <div class="bar-track"><div class="bar" style="--w:97.2%"></div></div>
+              <p class="bar-row__value">15.552</p>
+            </div>
+            <div class="bar-row">
+              <p class="bar-row__label">Construção civil</p>
+              <div class="bar-track"><div class="bar bar--accent" style="--w:7.01%"></div></div>
+              <p class="bar-row__value">1.122</p>
+            </div>
+            <div class="bar-row">
+              <p class="bar-row__label">Comércio</p>
+              <div class="bar-track"><div class="bar" style="--w:6.01%"></div></div>
+              <p class="bar-row__value">962</p>
+            </div>
+            <div class="bar-row">
+              <p class="bar-row__label">Indústria</p>
+              <div class="bar-track"><div class="bar" style="--w:3.89%"></div></div>
+              <p class="bar-row__value">623</p>
+            </div>
+            <div class="bar-axis" aria-hidden="true"><span>0</span><span>5 mil</span><span>10 mil</span><span>15 mil</span></div>
+          </div>
+          <p class="chart__note">No total, Curitiba teve saldo de 18.227 empregos formais no período. Fonte: Prefeitura de Curitiba (01/10/2026), com dados do Caged/MTE.</p>
+        </figure>
+
+        <aside class="reading-rules reveal" aria-labelledby="rules-title">
+          <h3 id="rules-title">Como ler estes dados</h3>
+          <ul class="ticks">
+            <li><strong>Mediana</strong> é o valor do meio: metade das contratações pagou menos e metade pagou mais. Não é o mesmo que salário médio.</li>
+            <li>Os salários mostrados são de <strong>contratação</strong> (admissões com carteira assinada, jornada de 30 horas semanais ou mais, sem contratos intermitentes, parciais ou de aprendiz). Não representam o que ganham todos os profissionais já empregados.</li>
+            <li>Os dados <strong>não incluem</strong> autônomos, profissionais PJ nem servidores estatutários.</li>
+            <li>São <strong>referências de admissões CLT</strong>, e não garantia de remuneração individual: o salário depende de experiência, empresa, região e área.</li>
+            <li>Dados do <strong>setor inteiro</strong> (CBIC e Prefeitura de Curitiba) não são dados exclusivos de engenheiros civis. Não há aqui dados salariais municipais.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ 07 · NOSSO STAND / GALERIA ============ -->
+    <section class="section section--light" id="stand" aria-labelledby="stand-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">07</span> Nosso stand</p>
+          <h2 id="stand-title">A engenharia também se apresenta na <em>prática.</em></h2>
+          <p class="section-head__lead">Esta seção será completada depois da Feira de Profissões, com registros reais da nossa participação.</p>
+        </header>
+
+        <!--
+          COMO ADICIONAR REGISTROS (sem reconstruir a seção):
+          1) Copie as fotos para assets/images/ e os vídeos para assets/videos/.
+          2) Em cada cartão abaixo, troque a <div class="slot__placeholder"> pelo modelo correspondente
+             (foto ou vídeo) que está nos comentários, preencha o alt e a legenda.
+          3) Só use imagens e vídeos feitos pela equipe no stand. Não use imagens de banco de imagens aqui.
+
+          MODELO DE FOTO (abre ampliada em uma janela acessível; fecha com Esc):
+            <button class="slot__open" type="button" data-lightbox-open aria-label="Ampliar foto: descreva a foto">
+              <img src="assets/images/stand-01.jpg" alt="Descrição objetiva da foto" width="1200" height="800" loading="lazy">
+            </button>
+            ...e, no <figcaption>, troque o texto pela legenda real da foto.
+
+          MODELO DE VÍDEO:
+            <video class="slot__video" controls preload="none" poster="assets/images/stand-video-01.jpg">
+              <source src="assets/videos/apresentacao.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+        -->
+        <ul class="gallery">
+          <li class="slot slot--wide reveal">
+            <figure class="slot__figure">
+              <div class="slot__placeholder" role="img" aria-label="Espaço reservado para fotografias do stand">
+                <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-photo"/></svg>
+              </div>
+              <figcaption><strong>Fotografias do stand</strong><span>Registros da nossa participação serão adicionados em breve.</span></figcaption>
+            </figure>
+          </li>
+          <li class="slot reveal">
+            <figure class="slot__figure">
+              <div class="slot__placeholder" role="img" aria-label="Espaço reservado para vídeos da apresentação">
+                <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-video"/></svg>
+              </div>
+              <figcaption><strong>Vídeos da apresentação</strong><span>Registros da nossa participação serão adicionados em breve.</span></figcaption>
+            </figure>
+          </li>
+          <li class="slot reveal">
+            <figure class="slot__figure">
+              <div class="slot__placeholder" role="img" aria-label="Espaço reservado para maquetes">
+                <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-model"/></svg>
+              </div>
+              <figcaption><strong>Maquetes</strong><span>Registros da nossa participação serão adicionados em breve.</span></figcaption>
+            </figure>
+          </li>
+          <li class="slot reveal">
+            <figure class="slot__figure">
+              <div class="slot__placeholder" role="img" aria-label="Espaço reservado para cartazes">
+                <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-poster"/></svg>
+              </div>
+              <figcaption><strong>Cartazes</strong><span>Registros da nossa participação serão adicionados em breve.</span></figcaption>
+            </figure>
+          </li>
+          <li class="slot reveal">
+            <figure class="slot__figure">
+              <div class="slot__placeholder" role="img" aria-label="Espaço reservado para protótipos">
+                <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-proto"/></svg>
+              </div>
+              <figcaption><strong>Protótipos</strong><span>Registros da nossa participação serão adicionados em breve.</span></figcaption>
+            </figure>
+          </li>
+          <li class="slot reveal">
+            <figure class="slot__figure">
+              <div class="slot__placeholder" role="img" aria-label="Espaço reservado para registros da interação com visitantes">
+                <svg class="icon icon--xxl" aria-hidden="true" focusable="false"><use href="#i-people"/></svg>
+              </div>
+              <figcaption><strong>Interação com visitantes</strong><span>Registros da nossa participação serão adicionados em breve.</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+
+        <div class="report reveal">
+          <h3 class="h-small">Relato da equipe</h3>
+          <!-- Substitua o parágrafo abaixo pelo texto escrito pela equipe depois da feira. -->
+          <p class="report__placeholder">O relato da nossa experiência na feira será publicado aqui depois do evento.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 08 · CRÉDITOS E REFERÊNCIAS (rodapé) ============ -->
+  <footer class="site-footer section--dark" id="creditos" aria-labelledby="creditos-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow__no" aria-hidden="true">08</span> Créditos e referências</p>
+        <h2 id="creditos-title">Quem fez. O que <em>consultamos.</em></h2>
+      </header>
+
+      <div class="footer-grid">
+        <section class="credits reveal" aria-labelledby="credits-h">
+          <h3 class="h-small" id="credits-h">Créditos</h3>
+          <!-- PREENCHER: troque o texto de cada <dd class="fill"> pelos dados reais e remova a classe "fill". -->
+          <dl class="credits__list">
+            <div><dt>Integrantes</dt><dd class="fill">[Nome completo dos integrantes]</dd></div>
+            <div><dt>Turma</dt><dd class="fill">[Turma]</dd></div>
+            <div><dt>Disciplina</dt><dd class="fill">[Disciplina]</dd></div>
+            <div><dt>Professor(a)</dt><dd class="fill">[Nome do(a) professor(a)]</dd></div>
+            <div><dt>Instituição</dt><dd class="fill">[Nome da instituição]</dd></div>
+            <div><dt>Feira de Profissões</dt><dd class="fill">[Nome, data e local da feira]</dd></div>
+          </dl>
+          <p class="credits__note">Ilustrações vetoriais (SVG) criadas para este projeto. Conteúdo e dados revisados em 11/11/2026.</p>
+        </section>
+
+        <section class="refs reveal" aria-labelledby="refs-h">
+          <h3 class="h-small" id="refs-h">Referências</h3>
+          <ol class="refs__list">
+            <li><a href="https://recoloca.me/salario/engenheiro-civil" target="_blank" rel="noopener noreferrer">Salário de engenheiro civil em 2026 (Brasil)<span class="sr-only"> (abre em nova aba)</span></a> — Recoloca, com dados do Novo CAGED/MTE.</li>
+            <li><a href="https://recoloca.me/salario/engenheiro-civil/pr" target="_blank" rel="noopener noreferrer">Salário de engenheiro civil no Paraná<span class="sr-only"> (abre em nova aba)</span></a> — Recoloca, com dados do Novo CAGED/MTE.</li>
+            <li><a href="https://cbic.org.br/construcao-gera-mais-de-200-mil-novos-empregos-formais-em-2026/" target="_blank" rel="noopener noreferrer">Construção gera mais de 200 mil novos empregos formais em 2026<span class="sr-only"> (abre em nova aba)</span></a> — CBIC (Câmara Brasileira da Indústria da Construção), 30/09/2026.</li>
+            <li><a href="https://cbic.org.br/infraestrutura-lidera-geracao-de-empregos-na-construcao-e-registra-melhor-resultado-da-serie-historica-aponta-cbic/" target="_blank" rel="noopener noreferrer">Infraestrutura lidera geração de empregos na construção e registra melhor resultado da série histórica<span class="sr-only"> (abre em nova aba)</span></a> — CBIC, 29/10/2026.</li>
+            <li><a href="https://www.curitiba.pr.gov.br/noticias/em-curitiba-servicos-e-construcao-civil-lideram-geracao-de-vagas-com-carteira-assinada-ate-agosto/85265" target="_blank" rel="noopener noreferrer">Em Curitiba, serviços e construção civil lideram geração de vagas com carteira assinada até agosto<span class="sr-only"> (abre em nova aba)</span></a> — Prefeitura de Curitiba, 01/10/2026.</li>
+            <li><a href="https://www.gov.br/mec/pt-br/cne/resolucoes/resolucoes-cne-ces-2019" target="_blank" rel="noopener noreferrer">Resoluções CNE/CES de 2019<span class="sr-only"> (abre em nova aba)</span></a> — Ministério da Educação (MEC) / Conselho Nacional de Educação.</li>
+            <li><a href="https://portal.mec.gov.br/docman/marco-2019-pdf/109871-pces001-19-1/file" target="_blank" rel="noopener noreferrer">Parecer CNE/CES nº 1/2019 — Diretrizes Curriculares Nacionais dos cursos de Engenharia<span class="sr-only"> (abre em nova aba)</span></a> — MEC.</li>
+            <li><a href="https://normativos.confea.org.br/Ementas/Visualizar?id=266" target="_blank" rel="noopener noreferrer">Resolução nº 218, de 1973<span class="sr-only"> (abre em nova aba)</span></a> — Confea (Conselho Federal de Engenharia e Agronomia).</li>
+            <li><a href="https://www.confea.org.br/profissional/atribuicoes-e-sombreamento" target="_blank" rel="noopener noreferrer">Atribuições e sombreamento<span class="sr-only"> (abre em nova aba)</span></a> — Confea.</li>
+            <li><a href="https://www.britannica.com/technology/civil-engineering" target="_blank" rel="noopener noreferrer">Civil engineering<span class="sr-only"> (abre em nova aba)</span></a> — Encyclopaedia Britannica.</li>
+            <li><a href="https://www.britannica.com/technology/concrete-building-material" target="_blank" rel="noopener noreferrer">Concrete<span class="sr-only"> (abre em nova aba)</span></a> — Encyclopaedia Britannica.</li>
+            <li><a href="https://www.ce.memphis.edu/1101/notes/concrete/section_2_history.html" target="_blank" rel="noopener noreferrer">History of Concrete Building Construction<span class="sr-only"> (abre em nova aba)</span></a> — Department of Civil Engineering, University of Memphis (notas de aula CIVL 1101).</li>
+            <li><a href="https://ironbridge.org.uk/about-us/the-iron-bridge" target="_blank" rel="noopener noreferrer">The Iron Bridge<span class="sr-only"> (abre em nova aba)</span></a> — Ironbridge Gorge Museum Trust.</li>
+            <li><a href="https://whc.unesco.org/en/list/371" target="_blank" rel="noopener noreferrer">Ironbridge Gorge<span class="sr-only"> (abre em nova aba)</span></a> — UNESCO World Heritage Centre.</li>
+            <li><a href="https://www.itaipu.gov.br/sites/default/files/af_df/1702_022_atualizacao_revista_IB_2017_digital_b.pdf" target="_blank" rel="noopener noreferrer">Publicação institucional da Itaipu Binacional (PDF)<span class="sr-only"> (abre em nova aba)</span></a> — Itaipu Binacional.</li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10306.htm" target="_blank" rel="noopener noreferrer">Decreto nº 10.306, de 2 de abril de 2020<span class="sr-only"> (abre em nova aba)</span></a> — Presidência da República.</li>
+          </ol>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Projeto escolar para a Feira de Profissões · Engenharia Civil</p>
+        <a class="to-top-inline" href="#topo">Voltar ao topo <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-up"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante: voltar ao topo (aparece após rolar a página) -->
+  <button class="to-top" type="button" aria-label="Voltar ao topo da página" hidden>
+    <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-up"/></svg>
+  </button>
+
+  <!-- Janela de ampliação da galeria (pronta para quando houver fotos reais) -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+    <button class="lightbox__close" type="button" aria-label="Fechar imagem ampliada">
+      <span aria-hidden="true">×</span>
+    </button>
+    <img class="lightbox__img" alt="" src="">
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </dialog>
+
+</body>
+</html>
